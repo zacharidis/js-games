@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Javascript Python </title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>Java Python JS</h1>
+        <h2>A rock paper scissors implementation for nerds</h2>
+        <p> Made by GZ  {CF IS THE BEST} </p>
+    </div>
+
+    <div class="game-area">
+        <p class="playersname">Player Plays Here</p>
+
+        
+            <button type="button">Java</button>
+            <button type="button">Python</button>
+            <button type="button">Javascript</button>
+        
+
+        
+    </div>
+
+    <div class="footer">
+       
+             <h2 class="thePlayer">Player :</h2>
+             <h2 class ="theComputer">Highly Advanced Computer :</h2>
+             <h2 class ="draws">Draws : </h2>
+             
+    </div>
+
+        <h3 class="helplbl" style="text-decoration:underline"> Click for help </h3>
+
+
+    <script>    
+
+        const playerName = prompt("Enter your name and choose your destiny ");
+
+        const player = document.querySelector('.playersname');
+        const player2 = document.querySelector('.thePlayer');
+        const helplbl = document.querySelector('.helplbl');
+        const buttons = document.querySelectorAll("button");
+        const computerH2 = document.querySelector(".theComputer");
+        const draws = document.querySelector(".draws");
+
+        let timesComputerWon = 0 ; 
+        let timesPlayerWon = 0 ; 
+        let timesDraw = 0 ;
+
+
+
+
+        helplbl.addEventListener('click',helpMe);
+
+        for(let i =0 ; i < buttons.length; i++) {
+            buttons[i].addEventListener("click",playTheGame);
+
+        }
+
+       
+
+
+        
+        player.innerHTML= `${playerName} plays here`;
+        player2.innerHTML =`${playerName} : `; 
+
+
+
+
+         //e einai to element pou kalese tin function 
+        function  playTheGame(e){
+
+            let computerAnswer = " ";
+            let playerAnswer = (e.target.innerText) ; 
+            console.log(playerAnswer);
+
+            // --------------- random to choose the computer selection
+            let computerSelection = Math.random();
+                if (computerSelection <= 0.33){
+                    computerAnswer = "Java";
+                } else if(computerSelection <= 0.66) {
+                    computerAnswer = "Python"
+                } else {
+                    computerAnswer = "Javascript"
+                }
+                console.log(`${computerAnswer} is computers selection `)
+
+                 let results = checkWhoWon(computerAnswer,playerAnswer);
+                
+                 console.log(results);
+                 updateCounters(results);
+                }
+
+                function updateCounters(results) {
+                    if (results === "User") {
+                        timesPlayerWon++;
+
+                    } else if (results === "Computer") {
+                        timesComputerWon++;
+                    } else {
+                        timesDraw ++;
+
+                    }
+
+                    player2.innerHTML =`${playerName} : ${timesPlayerWon}`;
+                    computerH2.innerHTML =`Highly Advanced Computer : ${timesComputerWon}`;
+                    draws.innerHTML = `Draws : ${timesDraw}`; 
+
+
+                
+
+                    
+
+                }
+
+
+
+        function checkWhoWon(comp,pl) {
+           
+            
+            if (comp===pl) {
+                return "Draw"
+            }
+
+
+            if (comp === "Java") {
+                if (pl==="Python") {
+                    return "User"
+                } else {
+                    return "Computer"
+                }
+            }
+
+            if (comp === "Python"){
+
+                if (pl ==="Java") {
+                    return "User"
+                } else {
+                    return "Computer"
+                }
+
+            }
+
+            if (comp = "Javascript") {
+                if (pl==="Java") {
+                    return "Computer"
+                } else {
+                 return "User"}
+            }
+            
+
+        }
+
+        function helpMe() {
+            alert("Java Poisons Python with Caffeine \n Python eats Javascript \n Javascript calls Java old ");
+        }
+
+
+    </script>
+    
+</body>
+</html>

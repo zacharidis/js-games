@@ -1,0 +1,33 @@
+.header {
+
+    display: flexbox;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: blanchedalmond;
+
+}
+
+.game-area{
+    padding: 50px 50px;
+
+    height:auto;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0px;
+    border: 2px solid orangered;
+}
+
+.game-area  button {
+    width: 100px;
+}
+
+.footer {
+    text-size: 10px ;
+    align-items: center;
+    text-align: center;
+    display:block;
+    background-color: antiquewhite;
+    border: 2px solid brown;
+}
