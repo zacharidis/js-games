@@ -27,11 +27,14 @@
         
     </div>
 
+    <h1 class="computerPlays"></h1>
+
     <div class="footer">
        
              <h2 class="thePlayer">Player :</h2>
              <h2 class ="theComputer">Highly Advanced Computer :</h2>
              <h2 class ="draws">Draws : </h2>
+             
              
     </div>
 
@@ -48,10 +51,12 @@
         const buttons = document.querySelectorAll("button");
         const computerH2 = document.querySelector(".theComputer");
         const draws = document.querySelector(".draws");
+        const cplays = document.querySelector(".computerPlays");
 
         let timesComputerWon = 0 ; 
         let timesPlayerWon = 0 ; 
         let timesDraw = 0 ;
+        let computerAnswer = " ";
 
 
 
@@ -76,7 +81,7 @@
          //e einai to element pou kalese tin function 
         function  playTheGame(e){
 
-            let computerAnswer = " ";
+            
             let playerAnswer = (e.target.innerText) ; 
             console.log(playerAnswer);
 
@@ -111,6 +116,7 @@
                     player2.innerHTML =`${playerName} : ${timesPlayerWon}`;
                     computerH2.innerHTML =`Highly Advanced Computer : ${timesComputerWon}`;
                     draws.innerHTML = `Draws : ${timesDraw}`; 
+                    cplays.innerHTML= `Computer played :  ${computerAnswer}`
 
 
                 
