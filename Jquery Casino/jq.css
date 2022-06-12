@@ -1,0 +1,42 @@
+.container {
+  
+    background-color: burlywood;
+    border: 10px solid rebeccapurple;
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.boxOne {
+    height: 100px;
+    width:  100px;
+    background-color: aliceblue;
+    text-align: center;
+    border: 5px solid cadetblue;
+}
+
+.boxTwo {
+    height: 100px;
+    width:  100px;
+    background-color: aliceblue;
+    text-align: center;
+    border: 5px solid cadetblue;
+}
+
+.boxThree {
+    height: 100px;
+    width:  100px;
+    background-color: aliceblue;
+    text-align: center;
+    border: 5px solid cadetblue;
+}
+
+button {
+align-self: center;
+text-align: center;
+
+}
+
